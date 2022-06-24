@@ -11,7 +11,7 @@ pipeline{
          }        
        stage('Build'){
             steps{
-                sh 'python3 sq.py'
+                sh 'python sq.py'
             }
          }
         stage('SonarQube analysis') {
