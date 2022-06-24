@@ -6,7 +6,7 @@ pipeline{
     stages{
        stage('GetCode'){
             steps{
-                git 'https://github.com/Rupeshb0310/Jenkinprac.git'
+                echo "code download"
             }
          }        
        stage('Build'){
