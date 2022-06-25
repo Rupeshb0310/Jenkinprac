@@ -3,12 +3,7 @@ pipeline{
     tools{
         maven "maven-3.6"
     }
-    stages{
-       stage('GetCode'){
-            steps{
-                git 'https://github.com/Rupeshb0310/Jenkinprac.git'
-            }
-         }        
+            
        stage('Build'){
             steps{
                 sh 'python3 sq.py'
