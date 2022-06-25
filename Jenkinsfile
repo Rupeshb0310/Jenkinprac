@@ -1,25 +1,20 @@
 pipeline{
-    
+    agent any
     tools{
         maven "maven-3.6"
     }
     stages{
        stage('GetCode'){
             steps{
-                echo "code download"
+                git 'https://github.com/Rupeshb0310/Jenkinprac.git'
             }
          }        
-      stage('Build') { 
-            agent {
-                docker {
-                    image 'python:2-alpine' 
-                }
+       stage('Build'){
+            steps{
+                sh 'python3 sq.py'
             }
-            steps {
-                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
-                stash(name: 'compiled-results', includes: 'sources/*.py*') 
-            }}
-       stage('SonarQube analysis') {
+         }
+        stage('SonarQube analysis') {
 //    def scannerHome = tool 'SonarScanner 4.0';
         steps{
         withSonarQubeEnv('Sonarqube 9.5') { 
@@ -31,4 +26,4 @@ pipeline{
         }
        
     }
-    }
+}
