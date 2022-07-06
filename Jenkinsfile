@@ -13,13 +13,14 @@ pipeline {
 
                     withSonarQubeEnv('Sonarqube-9.5') {
                       sh "${scannerHome}/bin/sonar-scanner \
+                      -D sonar.host.url=http://localhost:9000/ \
                       -D sonar.projectKey=demo \
                       -D sonar.python.coverage.reportPaths=/sonarqube-flask/coverage.xml \
                       -D sonar.python.xunit.reportPath=/sonarqube-flask/result.xml \
                       -D sonar.coverage.dtdVerification=false \
                       -D sonar.inclusions=app.py \
-                      -D sonar.coverage.exclusions=**/__init__.py \
-                      -D sonar.host.url=http://localhost:9000/"
+                      -D sonar.coverage.exclusions=**/__init__.py "
+                      
                   }
                 }
     }
