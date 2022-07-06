@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git url: 'https://github.com/Rupeshb0310/Jenkinprac.git'
+                echo "done"
             }
         }
         stage('SonarQube analysis') {
