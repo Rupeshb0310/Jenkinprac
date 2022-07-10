@@ -10,12 +10,16 @@ pipeline {
             steps {
                 sh "pip install coverage"
                 sh "pip3 install coverage"
+                sh "ls"
+                sh "coverage xml"
+                sh "ls"
             }
         }
         stage('SonarQube analysis') {
             steps {
                 script{
                     def scannerHome = tool 'Sonarqube-9.5';
+                    sh "ls"
 
                     withSonarQubeEnv('Sonarqube-9.5') {
                       sh "${scannerHome}/bin/sonar-scanner \
