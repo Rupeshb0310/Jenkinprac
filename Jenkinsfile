@@ -21,7 +21,8 @@ pipeline {
                     withSonarQubeEnv('Sonarqube-9.5') {
                       sh "${scannerHome}/bin/sonar-scanner \
                       -D sonar.python.version=1.0 \
-                      -D sonar.projectKey=coverage \
+                      -D sonar.projectKey=sqcv \
+                      -D sonar.python.coverage.reportPaths=/sqcv/coverage.xml
                       -D sonar.host.url=http://localhost:9000/"
                   }
                 }
