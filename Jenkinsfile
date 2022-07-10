@@ -9,12 +9,7 @@ pipeline {
         stage('DEmo') {
             steps {
                 sh "pip install coverage"
-                sh "pip3 install coverage"
-                sh "ls"
-                sh "coverage run factorial_test.py"
-                sh "coverage report"
-                sh "coverage xml"
-                sh "ls"
+            
             }
         }
         stage('SonarQube analysis') {
