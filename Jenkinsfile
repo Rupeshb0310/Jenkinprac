@@ -21,7 +21,7 @@ pipeline {
                       sh "${scannerHome}/bin/sonar-scanner \
                       -D sonar.python.version=1.0 \
                       -D sonar.projectKey=coverage \
-                      -D sonar.python.coverage.reportPath = ${scannerHome}/bin/sonar-scanner/coverage.xml \
+                      -D sonar.python.coverage.reportPath=${scannerHome}/bin/sonar-scanner/coverage.xml \
                       -D sonar.host.url=http://localhost:9000/"
                   }
                 }
