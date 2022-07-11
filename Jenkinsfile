@@ -10,7 +10,7 @@ pipeline {
                           branches: [[name: '*/master']],
                           extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'master']],
                           userRemoteConfigs: [[credentialsId: 'Github',
-                          url: 'git@github.com:Rupeshb0310/Jenkinprac.git']]
+                          url: 'https://github.com/Rupeshb0310/Jenkinprac.git']]
                     ]
             }
         }
