@@ -17,6 +17,7 @@ pipeline {
         stage('DEmo') {
             steps {
                 sh "pip install coverage"
+                coverage report
         
             }
         }
