@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git url: 'https://github.com/Rupeshb0310/Jenkinprac.git'
+                
                 checkout poll: false, 
                     scm: [$class: 'GitSCM',
                           branches: [[name: '*/master']],
@@ -17,6 +17,7 @@ pipeline {
         stage('DEmo') {
             steps {
                 sh "pip install coverage"
+                sh 'ls'
             
             }
         }
@@ -24,7 +25,7 @@ pipeline {
             steps {
                 script{
                     def scannerHome = tool 'Sonarqube-9.5';
-                    sh "ls"
+                    
 
                     withSonarQubeEnv('Sonarqube-9.5') {
                       sh "${scannerHome}/bin/sonar-scanner \
