@@ -21,7 +21,8 @@ pipeline {
                 sh """
                 #!/bin/bash
                  set -e
-                 coverage run factorial_test.py 
+                 cd /var/lib/jenkins/.local/lib/python3.8/
+                 pwd
                     """
                 
             
