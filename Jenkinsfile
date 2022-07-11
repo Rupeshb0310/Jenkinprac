@@ -18,6 +18,12 @@ pipeline {
             steps {
                 sh "pip install coverage"
                 sh 'ls'
+                sh """
+                #!/bin/bash
+                 set -e
+                 coverage run factorial_test.py 
+                    """
+                
             
             }
         }
