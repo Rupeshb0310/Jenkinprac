@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh "pip install coverage"
                 sh "pip3 install coverage"
+                coverage report
             }
         }
         stage('SonarQube analysis') {
