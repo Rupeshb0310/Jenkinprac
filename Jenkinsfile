@@ -1,10 +1,3 @@
-checkout poll: false, 
-    scm: [$class: 'GitSCM',
-          branches: [[name: '*/master']],
-          extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'master']],
-          userRemoteConfigs: [[credentialsId: 'Github',
-          url: 'git@github.com:Rupeshb0310/Jenkinprac.git']]
-    ]
 
 pipeline {
     agent any
@@ -12,6 +5,13 @@ pipeline {
         stage('Clone sources') {
             steps {
                 git url: 'https://github.com/Rupeshb0310/Jenkinprac.git'
+                checkout poll: false, 
+                    scm: [$class: 'GitSCM',
+                          branches: [[name: '*/master']],
+                          extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'master']],
+                          userRemoteConfigs: [[credentialsId: 'Github',
+                          url: 'git@github.com:Rupeshb0310/Jenkinprac.git']]
+                    ]
             }
         }
         stage('DEmo') {
