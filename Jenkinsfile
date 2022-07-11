@@ -17,16 +17,7 @@ pipeline {
         stage('DEmo') {
             steps {
                 sh "pip install coverage"
-                sh 'ls'
-                sh """
-                #!/bin/bash
-                 set -e
-                 cd /var/lib/jenkins/.local/lib/python3.8/
-                 coverage report
-            
-                    """
-                
-            
+        
             }
         }
         stage('SonarQube analysis') {
