@@ -23,6 +23,7 @@ pipeline {
                  set -e
                  cd /var/lib/jenkins/.local/lib/python3.8/
                  pwd
+                 ls
                     """
                 
             
