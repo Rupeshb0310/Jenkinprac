@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh "pip install coverage"
                 coverage report
+                echo "===================="
         
             }
         }
